@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "2cc50d45-ea3a-4534-8a59-664ad47ddfc0",
+		"name": "spring-graphql",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31542381"
+	},
+	"item": [
+		{
+			"name": "getAll-book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query{\r\n    allBooks{\r\n        id\r\n        title\r\n        desc\r\n        pages\r\n    }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": "http://localhost:8009/graphql"
+			},
+			"response": []
+		},
+		{
+			"name": "get/{bookId}",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query{\r\n    getBook(bookId:1){\r\n        id\r\n        title\r\n        desc\r\n        pages\r\n    }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": "http://localhost:8009/graphql"
+			},
+			"response": []
+		},
+		{
+			"name": "create-book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation{\r\n    createBook(book:\r\n        {\r\n            title:\"python\",\r\n            desc:\"For starting python concepts\",\r\n            author:\"YASH\",\r\n            price:2000.0,\r\n            pages:1000,\r\n        }\r\n    ){\r\n        id\r\n    }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": "http://localhost:8009/graphql"
+			},
+			"response": []
+		}
+	]
+}
